@@ -1,0 +1,42 @@
+CREATE TABLE college (
+  rollNo INTEGER PRIMARY KEY,
+  name TEXT NOT NULL,
+  dept TEXT NOT NULL
+);
+
+-- insert
+INSERT INTO college VALUES (1, 'Clark', 'CSE');
+INSERT INTO college VALUES (2, 'Dave', 'IT');
+INSERT INTO college VALUES (3, 'Ava', 'EEE');
+INSERT INTO college VALUES (4, 'Dan', 'AIDS');
+INSERT INTO college VALUES (5, 'Paxton', 'ECE');
+INSERT INTO college VALUES (6, 'Devi', 'AIML');
+INSERT INTO college VALUES (7, 'Katherine', 'CSE');
+INSERT INTO college VALUES (8, 'Lina', 'IT');
+INSERT INTO college VALUES (9, 'Lara', 'CSBS');
+INSERT INTO college VALUES (10, 'Margot', 'AIDS');
+
+-- fetch 
+SELECT * FROM college;
+
+CREATE TABLE hostel (
+  rollNo INTEGER PRIMARY KEY,
+  name TEXT NOT NULL,
+  roomNo INTEGER
+);
+
+INSERT INTO hostel VALUES (1, 'Clark', 4);
+INSERT INTO hostel VALUES (2, 'Dave', 7);
+INSERT INTO hostel VALUES (3, 'Ava', 6);
+INSERT INTO hostel VALUES (4, 'Dan', 3);
+INSERT INTO hostel VALUES (5, 'Paxton',2);
+INSERT INTO hostel VALUES (7, 'Katherine', 10);
+INSERT INTO hostel VALUES (10, 'Margot', 5);
+
+SELECT * FROM hostel;
+--inner join
+SELECT hostel.rollNo,college.name,college.dept from hostel inner join college on college.rollNo=hostel.rollNo;
+--outer join
+SELECT hostel.rollNo,college.name,college.dept from hostel right join college on college.rollNo=hostel.rollNo; 
+--left join
+SELECT college.rollNo,college.name,hostel.roomNo from college left join hostel on college.rollNo=hostel.rollNo;
