@@ -1,0 +1,48 @@
+//create database
+use vehicle
+
+//insertOne
+db.vehicle.insertOne({name:'Swift'})
+
+//insertMany
+db.vehicle.insertMany(name:'WRV',model:'Honda',rented_user_count:2,mileage:19,transmission:'gear',rent:1500,fuel:'diesel',image_url:'http://dipawoiefjueicnsaijcfn.com')
+
+db.vehicle.insertMany(name:'Swift',mileage:18,model:'DTS',rented_user_count:1,fuel:'petrol',image_url:"http://adsasdwed.com",rent:1300,transmission:'automatic')
+
+db.vehicle.insertMany(name:'Alto',model:'Suzuki',rented_user_count:3,mileage:19,transmission:'gear',rent:1600,fuel:'petrol',image_url:'http://nliufrtsxjgvku.com')
+
+db.vehicle.insertMany(name:'Creta',model:'Hyundai',rented_user_count:3,mileage:19,transmission:'gear',rent:1600,fuel:'petrol',image_url:'http://http://dpweuihdiwubedwehbd.com')
+
+db.vehicle.insertMany(name:'Breeza',model:'Suzuki',rented_user_count:5,mileage:18,transmission:'automatic',rent:1400,fuel:'petrol',image_url:'http://http://mwcicwoijcsmxosidncn.com')
+
+db.vehicle.insertMany(name:'Honda City',model:'Honda',rented_user_count:7,mileage:20,transmission:'automatic',rent:1900,fuel:'petrol',image_url:'http://fnijrfboienrcioefboiu.com')
+
+db.vehicle.insertMany(name:'Indigo',model:'Suzuki',rented_user_count:3,mileage:15,transmission:'gear',rent:1400,fuel:'petrol',image_url:'http:eorfjepinfpienrcijpw.com')
+
+db.vehicle.insertMany(name:'Aura',model:'Hyundai',rented_user_count:8,mileage:19,transmission:'gear',rent:1600,fuel:'petrol',image_url:'http://http://nliufrtsxjgvku.com')
+
+db.vehicle.insertMany(name:'Nexon',model:'Tata',rented_user_count:6,mileage:14,transmission:'automatic',rent:1000,fuel:'diesel',image_url:'http://liweuchaweuhcliu.com')
+
+db.vehicle.insertMany(name:'Bolero',model:'Mahindra',rented_user_count:8,mileage:12,transmission:'automatic',rent:1250,fuel:'diesel',image_url:'http://doiwaejfiuwaehj.com')
+
+
+//updateOne
+db.vehicle.updateOne({name:'Swift'},{$set:{model:'DTS',rented_user_count:1:mileage:18}})
+
+//updateMany
+db.vehicle.updateMany({rent:1000},{$set:{rent:1200}})
+
+//find
+db.vehicle.find()
+
+//sorting ascending order
+db.vehicle,find().sort({mileage:-1})
+
+//sorting descending order
+db.vehicle.find().sort({rent:-1})
+
+//greater than
+db.vehicle.find({mileage:{$gt:17}})
+
+//less than
+db.vehicle.find({rent:{$lt:1500}})
